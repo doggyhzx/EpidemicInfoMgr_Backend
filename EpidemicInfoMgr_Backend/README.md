@@ -1,2 +1,2 @@
 # EpidemicInfoMgr_Backend
- G5后端
+用户管理和新闻后端
