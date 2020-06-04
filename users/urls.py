@@ -19,5 +19,16 @@ from . import views
 
 urlpatterns = [
     path('ts/', views.OnTest),
+    path('profile/', views.OnGotoUserProfile),
+    path('profile/modify/', views.OnModifyProfilePosted),
+    path('profile/changepass/', views.OnChangePasswordRequest),
+    path('login/', views.OnGotoLoginPage),
+    path('login/post', views.OnLoginRequest),
+    path('register/', views.OnGotoRegisterPage),
+    path('register/post', views.OnRegisterFormSubmit),
+    path('logout/', views.OnLogoutRequest),
+    path('auth/mail/confirm/', views.OnMailConfirmed),
+    path('auth/authorization/', views.OnUserAuthorizationRequest),
+    path('createSuperUser', views.CreateSuperUser)
 
 ]
