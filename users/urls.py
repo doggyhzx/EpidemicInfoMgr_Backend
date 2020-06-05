@@ -18,17 +18,19 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('ts/', views.OnTest),
     path('profile/', views.OnGotoUserProfile),
     path('profile/modify/', views.OnModifyProfilePosted),
     path('profile/changepass/', views.OnChangePasswordRequest),
+    path('profile/changepass/set_new/', views.OnConfirmNewPassword),
     path('login/', views.OnGotoLoginPage),
-    path('login/post', views.OnLoginRequest),
+    path('login/post/', views.OnLoginRequest),
     path('register/', views.OnGotoRegisterPage),
-    path('register/post', views.OnRegisterFormSubmit),
+    path('register/post/', views.OnRegisterFormSubmit),
     path('logout/', views.OnLogoutRequest),
-    path('auth/mail/confirm/', views.OnMailConfirmed),
+    path('mail/confirm/reg/', views.OnRegisterMailConfirmed),
+    path('mail/confirm/changepass/', views.OnChangePassMailConfirmed),
     path('auth/authorization/', views.OnUserAuthorizationRequest),
+    path('auth/forbidden/', views.OnPermissionDenied),
     path('createSuperUser', views.CreateSuperUser)
 
 ]

@@ -44,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-   # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'EpidemicInfoMgr_Backend.wsgi.application'
 
-LOGIN_URL = '/users/login/'
+LOGIN_URL = '/user/login/'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.AllowAllUsersModelBackend']
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -147,6 +147,8 @@ EMAIL_HOST_USER = 'se_proj_reg@163.com'  # 帐号
 EMAIL_HOST_PASSWORD = 'CMOJHASAPVSICYHZ'  # 授权码（****）
 # 默认邮件
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_VERIFY_URL = 'http://127.0.0.1:8000/user/mail/confirm/'
+
 
 DEFAULT_SUPERUSER_INFO = {
     'phone': '15111111111',
