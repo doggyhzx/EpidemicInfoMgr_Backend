@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
-    'news'
+    'corsheaders',
+    'News.apps.NewsConfig'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'EpidemicInfoMgr_Backend.urls'
@@ -70,6 +73,66 @@ TEMPLATES = [
     },
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+
+    'http://*',
+
+)
+
+CORS_ALLOW_METHODS = (
+
+    'DELETE',
+
+    'GET',
+
+    'OPTIONS',
+
+    'PATCH',
+
+    'POST',
+
+    'PUT',
+
+    'VIEW',
+
+)
+
+
+CORS_ALLOW_HEADERS = (
+
+    'accept',
+
+    'XMLHttpRequest',
+
+    'X_FILENAME',
+
+    'accept-encoding',
+
+    'authorization',
+
+    'content-type',
+
+    'dnt',
+
+    'origin',
+
+    'user-agent',
+
+    'x-csrftoken',
+
+    'x-requested-with',
+
+    'Pragma',
+
+    'X-Custom-Header',
+
+)
+
+
 WSGI_APPLICATION = 'EpidemicInfoMgr_Backend.wsgi.application'
 
 LOGIN_URL = '/user/login/'
@@ -87,7 +150,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
         'NAME': 'users',  # 数据库名
         'USER': 'root',  # 账号
-        'PASSWORD': '',  # 密码
+        'PASSWORD': 'makiaoba1X',  # 密码
         'HOST': '127.0.0.1',  # HOST
         'POST': 3306,  # 端口
 
